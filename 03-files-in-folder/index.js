@@ -14,7 +14,7 @@ fs.readdir(
                     path.join(__dirname, 'secret-folder', item.name),
                     (err, stat) => {
                         if(err) throw err
-                        console.log(`${name} - ${type} - ${stat.size}`)
+                        console.log(`${name} - ${type} - ${stat.size} bytes`)
                     }
                 )
             }
