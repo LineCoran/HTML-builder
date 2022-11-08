@@ -17,7 +17,6 @@ stdin.on('data', data => {
     if (data.toString().trim() == 'exit') {
         process.exit()
     }
-    
     fs.appendFile(
         path.join(__dirname, 'text.txt'),
         data,
@@ -28,4 +27,5 @@ stdin.on('data', data => {
     }
 );
 
-process.on('exit', () => stdout.write("Good bye Mister!"))
+process.on('exit', () => stdout.write("\nGood bye Mister!"));
+process.on('SIGINT', () => process.exit());
